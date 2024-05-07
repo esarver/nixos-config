@@ -19,7 +19,7 @@
 
   # Add the ability to run not-packaged programs, from nix.dev/permalink/stub-ld
   programs = {
-    nix-li = {
+    nix-ld = {
       enable = true;
       libraries = with pkgs; [
 
