@@ -22,7 +22,7 @@
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
-
+	openssl
       ];
     };
   };
