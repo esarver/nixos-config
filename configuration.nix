@@ -17,6 +17,10 @@
   networking.hostName = "esarverthinkpad"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ];})
+  ];
+
   # Add the ability to run not-packaged programs, from nix.dev/permalink/stub-ld
   programs = {
     neovim = {
@@ -115,9 +119,9 @@
     git
     wget
     curl
-    vim
+    #vim
   ];
-  environment.variables.EDITOR = "vim";
+  #environment.variables.EDITOR = "vim";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
