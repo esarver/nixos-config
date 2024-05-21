@@ -19,6 +19,10 @@
 
   # Add the ability to run not-packaged programs, from nix.dev/permalink/stub-ld
   programs = {
+    neovim = {
+        enable = true;
+        defaultEditor = true;
+    }
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
