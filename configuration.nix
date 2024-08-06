@@ -76,6 +76,10 @@
         };
         # Enable CUPS to print documents.
         printing.enable = true;
+        displayManager = {
+            cosmic.enable = true;
+            cosmic-greeter.enable = true;
+        };
         xserver = {
             # Enable the X11 windowing system.
             enable = true;
