@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-cosmic, ... }@inputs: {
 
     nixosConfigurations = {
         esarverthinkpad = nixpkgs.lib.nixosSystem {
