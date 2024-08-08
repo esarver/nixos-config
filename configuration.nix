@@ -123,6 +123,7 @@
     wget
     curl
     gcc
+    vivaldi
   ];
   #environment.variables.EDITOR = "vim";
 
