@@ -17,7 +17,7 @@
 
     nixosConfigurations = {
         esarverthinkpad = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
+            system = "x87_64-linux";
             modules = [
                 {
                     nix.settings = {
@@ -25,6 +25,7 @@
                         trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
                     };
                 }
+                nixos-cosmic.nixosModules.default
                 ./configuration.nix
                 home-manager.nixosModules.home-manager {
                     home-manager.useGlobalPkgs = true;
