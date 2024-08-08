@@ -10,6 +10,7 @@
         ripgrep
         eza
         fzf
+        bat
 
         lsof     # list open files
         usbutils # lsusb
@@ -37,9 +38,12 @@
         '';
     };
 
-    programs.helix {
+    programs.helix = {
         enable = true;
         defaultEditor = true;
+        extraPackages = [
+            pkgs.nil
+        ];
         settings = {
             theme = "gruvbox";
             editor = {
@@ -83,9 +87,9 @@
                     G = "goto_file_end";
                     "%" = "match_brackets";
                     V = ["select_mode" "extend_to_line_bounds"];
-                    C = ["extend_to_line_end" "yank_main_selection_to_clipboard", "delete_selection" "insert_mode"];
-                    D = ["extend_to_line_end" "yank_main_selection_to_clipboard", "delete_selection"];
-                    S = "surround_add"
+                    C = ["extend_to_line_end" "yank_main_selection_to_clipboard" "delete_selection" "insert_mode"];
+                    D = ["extend_to_line_end" "yank_main_selection_to_clipboard" "delete_selection"];
+                    S = "surround_add";
                 };
             };
         };
