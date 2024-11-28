@@ -2,13 +2,13 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-cosmic = {
         url = "github:lilyinstarlight/nixos-cosmic";
         inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-        url = "github:nix-community/home-manager/release-24.05";
+        url = "github:nix-community/home-manager/release-24.11";
         inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -17,7 +17,7 @@
 
     nixosConfigurations = {
         esarverthinkpad = nixpkgs.lib.nixosSystem {
-            system = "x87_64-linux";
+            system = "x86_64-linux";
             modules = [
                 {
                     nix.settings = {
