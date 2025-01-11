@@ -93,7 +93,7 @@
   };
 
   virtualisation = {
-    container.enable = true;
+    containers.enable = true;
     podman = {
         enable = true;
         dockerCompat = true;
