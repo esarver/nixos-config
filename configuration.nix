@@ -92,6 +92,15 @@
         };
   };
 
+  virtualisation = {
+    container.enable = true;
+    podman = {
+        enable = true;
+        dockerCompat = true;
+        defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   # Enable sound with pipewire.
 #sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -124,7 +133,7 @@
     curl
     gcc
     vivaldi
-    freecad-wayland
+    podman-compose
   ];
   #environment.variables.EDITOR = "vim";
 
