@@ -113,7 +113,7 @@
   users.users.esarver = {
     isNormalUser = true;
     description = "Edwin Sarver";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "podman" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
