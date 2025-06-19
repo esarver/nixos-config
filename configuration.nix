@@ -18,7 +18,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ];})
+    pkgs.nerd-fonts.fira-code
   ];
 
   # Add the ability to run not-packaged programs, from nix.dev/permalink/stub-ld
@@ -255,7 +255,7 @@
 
   # Enable sound with pipewire.
 #sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
