@@ -14,6 +14,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   networking.hostName = "esarverthinkpad"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -60,8 +62,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  security.rtkit.enable = true;
+
   services = {
         fwupd.enable = true;
+        pulseaudio.enable = false;
         pipewire = {
               enable = true;
               alsa.enable = true;
@@ -75,15 +80,22 @@
               #media-session.enable = true;
         };
         # Enable CUPS to print documents.
-        printing.enable = true;
-        desktopManager.cosmic.enable = true;
-        displayManager.cosmic-greeter.enable = true;
+        printing = {
+            enable = true;
+            drivers = [pkgs.cnijfilter2];
+        };
+        desktopManager = {
+            cosmic.enable = true;
+            gnome.enable = true;
+        };
+        displayManager = {
+            cosmic-greeter.enable = true;
+            gdm.enable = true;
+        };
         xserver = {
             # Enable the X11 windowing system.
             enable = true;
             # Enable the GNOME Desktop Environment.
-            displayManager.gdm.enable = true;
-            desktopManager.gnome.enable = true;
             # Configure keymap in X11
             xkb = {
                 layout = "us";
@@ -253,10 +265,6 @@
     };
   };
 
-  # Enable sound with pipewire.
-#sound.enable = true;
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -276,7 +284,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
