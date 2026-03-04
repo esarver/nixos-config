@@ -294,6 +294,8 @@
     gcc
     vivaldi
     podman-compose
+    (pkgs.ffmpeg-full.override { withUnfree = true; })
+    rclone
   ];
   #environment.variables.EDITOR = "vim";
 
