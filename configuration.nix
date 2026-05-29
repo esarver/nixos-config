@@ -295,7 +295,7 @@
     vivaldi
     podman-compose
     (pkgs.ffmpeg-full.override { withUnfree = true; })
-    rclone
+    obsidian
   ];
   #environment.variables.EDITOR = "vim";
 
