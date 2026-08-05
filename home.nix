@@ -5,7 +5,6 @@
     home.homeDirectory = "/home/esarver";
 
     home.packages = with pkgs; [
-        neofetch
 
         ripgrep
         eza
