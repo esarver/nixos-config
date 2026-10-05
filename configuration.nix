@@ -295,14 +295,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
+    #git
     wget
     curl
     gcc
     vivaldi
     podman-compose
     (pkgs.ffmpeg-full.override { withUnfree = true; })
-    obsidian
+    #obsidian
   ];
   #environment.variables.EDITOR = "vim";
 
